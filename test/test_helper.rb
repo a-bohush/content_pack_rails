@@ -5,5 +5,6 @@ require_relative "../test/dummy/config/environment"
 require "rails/test_help"
 
 require "rails/test_unit/reporter"
-Rails::TestUnitReporter.executable = 'bin/test'
+require "pry-byebug"
 
+Rails::TestUnitReporter.executable = 'bin/test'
