@@ -5,20 +5,12 @@ Gem::Specification.new do |spec|
   spec.version     = ContentPackRails::VERSION
   spec.authors     = ["Andrew Bohush"]
   spec.email       = ["a.bohush01@gmail.com"]
-  spec.homepage    = "http://mygemserver.com"
-  spec.summary     = "Summary of ContentPackRails."
-  # spec.description = "TODO: Description of ContentPackRails."
+  spec.homepage    = "https://github.com/a-bohush/content_pack_rails.git"
+  spec.summary     = "Ruby on Rails helpers for capturing view content into bundles."
   spec.license     = "MIT"
 
-  # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
-  # to allow pushing to a single host or delete this section to allow pushing to any host.
-  # spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
-
-  spec.metadata["homepage_uri"] = spec.homepage
-  # spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
+  spec.metadata["source_code_uri"] = spec.homepage
   # spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
-
-  # spec.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
