@@ -58,4 +58,10 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_equal 'c1', provide_content_pack
     assert_equal 'c2', provide_custom_pack
   end
+
+  test '#content_pack_get returnes content entry by given id' do
+    content_pack('1', 'c1')
+    content_pack('2', 'c2')
+    assert_equal content_pack_get('2'), 'c2'
+  end
 end
