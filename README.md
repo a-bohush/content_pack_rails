@@ -23,7 +23,7 @@ module ApplicationHelper
 end
 ```
 
-By default, this will add two view helpers `content_pack` and `provide_content_pack`.
+By default, this will add three view helpers `content_pack`, `provide_content_pack` and `content_pack_get`.
 To avoid collisions with a helper of the same name you might already have in your app, provide a different name:
 
 ```ruby
@@ -71,6 +71,11 @@ Every content passed to the `content_pack` is aggregated into one "pack," which 
 So later on, you can render the whole pack somewhere in your view, like this:
 ```erb
 <%= provide_content_pack %>
+```
+
+To access a single content entry from the pack, use `content_pack_get`:
+```erb
+<%= content_pack_get('content-id') %>
 ```
 
 Should you want to have multiple packs, for example, to group content, you can set up those by including this module as many times as needed with different names:
