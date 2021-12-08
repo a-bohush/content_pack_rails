@@ -53,6 +53,16 @@ class ApplicationHelperTest < ActionView::TestCase
     assert_instance_of ActiveSupport::SafeBuffer, provide_content_pack
   end
 
+  test '#provide_content_pack returnes nil if no content collected' do
+    assert_nil provide_content_pack
+  end
+
+  test '#provide_content_pack tolerates nil entries' do
+    content_pack('id1') { 'c1' }
+    content_pack('id2') { nil }
+    assert_equal 'c1', provide_content_pack
+  end
+
   test '#content_pack & #custom_pack are separated by scope' do
     content_pack('id', 'c1')
     custom_pack('id', 'c2', flush: true)
