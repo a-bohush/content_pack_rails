@@ -50,6 +50,7 @@ class ApplicationHelperTest < ActionView::TestCase
     content_pack('id1') { 'c1' }
     content_pack('id2') { 'c2' }
     assert_equal 'c1c2', provide_content_pack
+    assert_instance_of ActiveSupport::SafeBuffer, provide_content_pack
   end
 
   test '#content_pack & #custom_pack are separated by scope' do
@@ -63,5 +64,6 @@ class ApplicationHelperTest < ActionView::TestCase
     content_pack('1', 'c1')
     content_pack('2', 'c2')
     assert_equal content_pack_get('2'), 'c2'
+    assert_instance_of ActiveSupport::SafeBuffer, content_pack_get('2')
   end
 end

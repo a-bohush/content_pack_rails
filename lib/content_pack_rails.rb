@@ -16,8 +16,8 @@ module ContentPackRails
       end
 
       define_method "provide_#{configs[:pack_name]}" do
-        instance_variable_get(:"@_#{configs[:pack_name]}_ids").inject("") do |acc, id|
-          acc.concat(content_for(id))
+        instance_variable_get(:"@_#{configs[:pack_name]}_ids").inject(nil) do |acc, id|
+          acc ? acc.safe_concat(content_for(id)) : content_for(id)
         end
       end
 
