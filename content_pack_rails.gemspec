@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.license     = "MIT"
 
   spec.metadata["source_code_uri"] = spec.homepage
-  spec.metadata["changelog_uri"] = "https://github.com/a-bohush/content_pack_rails/blob/main/README.md"
+  spec.metadata["changelog_uri"] = "https://github.com/a-bohush/content_pack_rails/blob/main/CHANGELOG.md"
   spec.extra_rdoc_files = ['README.md']
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
