@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.2 (2021-12-08)
+
+### Bug Fixes
+
+* prevent provide_content_pack from crash when no content collected
+
 ## 0.2.1 (2021-12-08)
 
 ### Bug Fixes
