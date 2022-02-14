@@ -1,4 +1,8 @@
 # ContentPackRails
+
+[![Gem Version](https://badge.fury.io/rb/content_pack_rails.svg)](https://badge.fury.io/rb/content_pack_rails)
+[![Tests](https://github.com/a-bohush/content_pack_rails/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/a-bohush/content_pack_rails/actions/workflows/tests.yml)
+
 A thin wrapper around [`ActionView::Helpers::CaptureHelper#content_for`](https://api.rubyonrails.org/classes/ActionView/Helpers/CaptureHelper.html#method-i-content_for).
 Useful when you need to collect multiple content entries during page rendering, for example <script type="text/template"> templates, without woring about possible duplications and name clashes.
 
@@ -33,7 +37,7 @@ module ApplicationHelper
 end
 ```
 
-Helper `content_pack` declares the same parameters as a standard rails `content_for` and can be used similarly to capture content like this:
+Helper `content_pack` declares the same parameters as the standard rails `content_for` and can be used similarly to capture content like this:
 
 ```erb
 <% content_pack 'content-id' do |id| %>
@@ -45,14 +49,14 @@ Helper `content_pack` declares the same parameters as a standard rails `content_
    -->
 <% end %>
 ```
-or pass content as a second argument:
+or pass content as the second argument:
 ```erb
 <% content_pack 'content-id', 'Your content' %>
 ```
 
 Unlike `content_for`, by default, `content_pack` will not concatenate content with the same name.
 Multiple calls to `content_pack` with the same content name will result in only the first content being added to the pack.
-If you would like to add additional content on a given name, you should pass an `append: true` option like so:
+If you would like to add additional content on a given name, you should pass the `append: true` option like so:
 
 ```erb
 <% content_pack 'content-id', 'first content' %>
@@ -60,7 +64,7 @@ If you would like to add additional content on a given name, you should pass an 
 <% content_pack 'content-id', 'second content', append: true %>
 ```
 
-In case you want to override content on a given name, provide a `flush: true` option:
+In case you want to override content on a given name, provide the `flush: true` option:
 ```erb
 <% content_pack 'content-id', 'first content' %>
 <!-- following will override the first one -->
