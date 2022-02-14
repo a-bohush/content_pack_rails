@@ -18,6 +18,10 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
 
-  spec.add_development_dependency "rails", "~> 6.1.4", ">= 6.1.4.1"
+  if ENV['TEST_RAILS_VERSION'].nil?
+    spec.add_development_dependency "rails", "~> 6.1.4", ">= 6.1.4.1"
+  else
+    spec.add_development_dependency "rails", ENV['TEST_RAILS_VERSION'].to_s
+  end
   spec.add_development_dependency "pry-byebug"
 end
