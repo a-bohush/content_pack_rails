@@ -25,12 +25,10 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
 
-      - name: Install gems
+      - name: Install gems and run tests
         env:
           TEST_RAILS_VERSION: ${{ matrix.rails }}
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
-
-      - name: Run tests
-        run: bundle exec rake
+          bundle exec rake
